@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Flexbox 星際補給站：透過排隊、對齊與換行任務學會 CSS Flexbox。"
+    />
+    <title>Flexbox 星際補給站</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">CSS Flexbox Learning Game</p>
+          <h1>Flexbox 星際補給站</h1>
+          <p class="hero__copy">
+            你是太空站的排程員，必須用 Flexbox 指令安排補給艇位置。每一關都有一個目標隊形，調整屬性、觀察變化，讓貨物安全抵達。
+          </p>
+        </div>
+        <div class="mission-card">
+          <strong id="score">0/5</strong>
+          <span>任務完成</span>
+        </div>
+      </section>
+
+      <section class="philosophy" aria-labelledby="philosophy-title">
+        <h2 id="philosophy-title">遊戲設計理念</h2>
+        <p>
+          這款遊戲把 Flexbox 的抽象語法轉化成「太空補給任務」：玩家不是背屬性，而是透過立即可見的隊形變化理解主軸、交叉軸、方向、間距與換行。
+          關卡由簡到難，每次只加入一個新概念，並保留目前 CSS 程式碼，讓視覺結果與真實語法同步連結。
+        </p>
+      </section>
+
+      <section class="game-grid">
+        <aside class="panel levels" aria-label="關卡選單">
+          <h2>任務清單</h2>
+          <div id="levels"></div>
+        </aside>
+
+        <section class="panel mission" aria-labelledby="mission-title">
+          <p class="eyebrow" id="mission-label">Mission 1</p>
+          <h2 id="mission-title"></h2>
+          <p id="mission-story"></p>
+          <p class="hint" id="mission-hint"></p>
+
+          <div class="stage-pair">
+            <div>
+              <div class="stage-label">你的貨艙</div>
+              <div class="cargo-bay" id="player-bay"></div>
+            </div>
+            <div id="target-panel">
+              <div class="stage-label">目標隊形</div>
+              <div class="cargo-bay cargo-bay--ghost" id="target-bay"></div>
+            </div>
+          </div>
+
+          <div class="status" id="status" role="status"></div>
+        </section>
+
+        <aside class="panel controls" aria-label="Flexbox 控制面板">
+          <h2>控制面板</h2>
+          <div id="controls"></div>
+
+          <pre class="code-preview"><code id="code-preview"></code></pre>
+
+          <div class="button-row">
+            <button class="secondary" id="reset-button">重設</button>
+            <button class="secondary" id="target-button">隱藏目標</button>
+            <button class="primary" id="next-button" disabled>下一關</button>
+          </div>
+        </aside>
+      </section>
+
+      <section class="deploy-note">
+        <h2>Vercel 部署方式</h2>
+        <ol>
+          <li>把專案推到 GitHub。</li>
+          <li>在 Vercel 匯入此 repository。</li>
+          <li>Build Command 使用 <code>npm run build</code>，Output Directory 使用 <code>dist</code>。</li>
+        </ol>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
